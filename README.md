@@ -6,3 +6,5 @@
 TOKEN=AEFEFofinefoefq02952t2ng0289t20ht2f2
 
 (=以降はbotのTOKENをコピペ)とすれば動きます、たー
+
+python3 main.py とすれば起動します
