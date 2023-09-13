@@ -3,6 +3,7 @@ import discord
 import siritori
 import joke
 import eagle
+import japantime
 
 # .envファイルからTOKENの値を読み込み
 import os
@@ -68,6 +69,12 @@ async def on_message(message):
         
         elif (contains_target(message.content, '!eagle')) and flag == True:
             await message.channel.send(eagle.suppot())
+
+        elif (contains_target(message.content, '!japantime')) and flag == True:
+            await message.channel.send(japantime.japantime())
+        
+        elif (contains_target(message.content, '!bangladeshtime')) and flag == True:
+            await message.channel.send(japantime.bangladeshtime())
         
         elif flag == True:
             if ends_with_target(message.content, 'ま'):
