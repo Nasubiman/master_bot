@@ -1,7 +1,7 @@
 import random
 
 def joke():
-    random_integer = random.randint(1, 3)
+    random_integer = random.randint(1, 8)
 
     if random_integer == 1:
         return "「(gitに)上げません 動くまでは」"
