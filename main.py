@@ -1,6 +1,7 @@
 # discord.pyをインポート
 import discord
 import siritori
+import joke
 
 # .envファイルからTOKENの値を読み込み
 import os
