@@ -2,6 +2,7 @@
 import discord
 import siritori
 import joke
+import eagle
 
 # .envファイルからTOKENの値を読み込み
 import os
@@ -64,6 +65,9 @@ async def on_message(message):
         
         elif (contains_target(message.content, '!joke')) and flag == True:
             await message.channel.send(joke.joke())
+        
+        elif (contains_target(message.content, '!eagle')) and flag == True:
+            await message.channel.send(eagle.suppot())
         
         elif flag == True:
             if ends_with_target(message.content, 'ま'):
