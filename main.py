@@ -1,10 +1,10 @@
 # discord.pyをインポート
 import discord
-import siritori
-import joke
-import eagle
-import japantime
-import gobi
+# import siritori
+# import master_bot.include.joke as joke
+# import eagle
+# import japantime
+from include import gobi, japantime, eagle , joke , siritori
 
 # .envファイルからTOKENの値を読み込み
 import os
@@ -23,8 +23,6 @@ async def on_ready():
     print('Startup Success!!!')
 
 
-def ends_with_target(text , target):
-    return text.endswith(target)
 
 def contains_target(text , target):
     return target in text
