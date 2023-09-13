@@ -4,6 +4,7 @@ import siritori
 import joke
 import eagle
 import japantime
+import gobi
 
 # .envファイルからTOKENの値を読み込み
 import os
@@ -77,16 +78,7 @@ async def on_message(message):
             await message.channel.send(japantime.bangladeshtime())
         
         elif flag == True:
-            if ends_with_target(message.content, 'ま'):
-                await message.channel.send(message.content + 'すたー')
-            elif ends_with_target(message.content , 'ます'):
-                await message.channel.send(message.content + 'たー')
-            elif ends_with_target(message.content , 'ますた'):
-                await message.channel.send(message.content + 'ー')
-            elif ends_with_target(message.content , 'ますたー'):
-                await message.channel.send(message.content + 'ーーーーーー!!!!!!!!!!!!!!!')
-            else:
-                await message.channel.send(message.content + 'ますたー')
+            await message.channel.send(gobi.gobi(message.content))
 
     # 上記と同様に2個目の設定
 
