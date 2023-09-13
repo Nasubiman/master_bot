@@ -2,6 +2,7 @@
 import discord
 import siritori
 import joke
+import eagle
 
 # .envファイルからTOKENの値を読み込み
 import os
