@@ -62,6 +62,9 @@ async def on_message(message):
             await message.channel.send('しりとりを始めるよ！まずは自分から\n しりとりますたー')
             siritori_flag = True
         
+        elif (contains_target(message.content, '!joke')) and flag == True:
+            await message.channel.send(joke.joke())
+        
         elif flag == True:
             if ends_with_target(message.content, 'ま'):
                 await message.channel.send(message.content + 'すたー')
