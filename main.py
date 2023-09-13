@@ -1,6 +1,7 @@
 # discord.pyをインポート
 import discord
 import siritori
+import joke
 
 # .envファイルからTOKENの値を読み込み
 import os
@@ -60,6 +61,9 @@ async def on_message(message):
         elif (contains_target(message.content, '!しりとり') or contains_target(message.content , "!siritori")) and flag == True:
             await message.channel.send('しりとりを始めるよ！まずは自分から\n しりとりますたー')
             siritori_flag = True
+        
+        elif (contains_target(message.content, '!joke')) and flag == True:
+            await message.channel.send(joke.joke())
         
         elif flag == True:
             if ends_with_target(message.content, 'ま'):
