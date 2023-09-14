@@ -34,45 +34,47 @@ async def on_message(message):
     # Botが出力したメッセージじゃ無い場合（この条件でBotのメッセージを弾く）
     if not message.author.bot:
         print(obj.instance_method())
-        if contains_target(message.content, '!start'):
-            if flag == False:
+        if flag == False:
+            if contains_target(message.content, '!start'):
                 await message.channel.send('今から言葉の語尾にいちいち「ますたー」をつけてあげるよ！\n「!end」で終了するよ!')
                 flag = True
-            else:
+            
+            elif contains_target(message.content, '!end'):
+                await message.channel.send('マスターモードは始まってないよ！')
+            
+        elif flag == True:
+            if contains_target(message.content, '!start'):
                 await message.channel.send('マスターモードはすでに始まってるよ！')
-
-        elif contains_target(message.content, '!end'):
-            if flag == True:
+            
+            elif contains_target(message.content, '!end'):
                 await message.channel.send('マスターモードを終了するよ！')
                 flag = False
-            else:
-                await message.channel.send('マスターモードは始まってないよ！')
 
-        elif contains_target(message.content, '!help'):
-            await message.channel.send('helpなんて存在しない、そんなものマスターにきけばいいと思うよ!')
-        
-        elif siritori_flag == True:
-            if ends_with_target(message.content, '!end'):
+            elif contains_target(message.content, '!help'):
                 await message.channel.send('helpなんて存在しない、そんなものマスターにきけばいいと思うよ!')
+            
+            elif siritori_flag == True:
+                if contains_target(message.content, '!end'):
+                    await message.channel.send('helpなんて存在しない、そんなものマスターにきけばいいと思うよ!')
 
-        elif (contains_target(message.content, '!しりとり') or contains_target(message.content , "!siritori")) and flag == True:
-            await message.channel.send('しりとりを始めるよ！まずは自分から\n しりとりますたー')
-            siritori_flag = True
-        
-        elif (contains_target(message.content, '!joke')) and flag == True:
-            await message.channel.send(joke.joke())
-        
-        elif (contains_target(message.content, '!eagle')) and flag == True:
-            await message.channel.send(eagle.suppot())
+            elif (contains_target(message.content, '!しりとり') or contains_target(message.content , "!siritori")):
+                await message.channel.send('しりとりを始めるよ！まずは自分から\n しりとりますたー')
+                siritori_flag = True
+            
+            elif (contains_target(message.content, '!joke')):
+                await message.channel.send(joke.joke())
+            
+            elif (contains_target(message.content, '!eagle')):
+                await message.channel.send(eagle.suppot())
 
-        elif (contains_target(message.content, '!japantime')) and flag == True:
-            await message.channel.send(japantime.japantime())
-        
-        elif (contains_target(message.content, '!bangladeshtime')) and flag == True:
-            await message.channel.send(japantime.bangladeshtime())
-        
-        elif flag == True:
-            await message.channel.send(gobi.gobi(message.content))
+            elif (contains_target(message.content, '!japantime')):
+                await message.channel.send(japantime.japantime())
+            
+            elif (contains_target(message.content, '!bangladeshtime')):
+                await message.channel.send(japantime.bangladeshtime())
+            
+            elif flag == True:
+                await message.channel.send(gobi.gobi(message.content))
 
     # 上記と同様に2個目の設定
 
