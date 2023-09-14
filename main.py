@@ -52,13 +52,10 @@ async def on_message(message):
             elif contains_target(message.content, '!help'):
                 await message.channel.send(help.help())
             
-            elif siritori_flag == True:
-                if contains_target(message.content, '!end'):
-                    await message.channel.send('helpなんて存在しない、そんなものマスターにきけばいいと思うよ!')
-
-            elif (contains_target(message.content, '!しりとり') or contains_target(message.content , "!siritori")):
-                await message.channel.send('しりとりを始めるよ！まずは自分から\n しりとりますたー')
-                siritori_flag = True
+            elif contains_target(message.content , "!siritori") or siritori_flag == True:
+                result = siritori.siritori(message.content , siritori_flag)
+                siritori_flag = result[1]
+                await message.channel.send(result[0])
             
             elif (contains_target(message.content, '!joke')):
                 await message.channel.send(joke.joke())

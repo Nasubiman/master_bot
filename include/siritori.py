@@ -44,3 +44,12 @@ word_list = ["apple", "elephant", "tiger", "rabbit", "cat", "dog"]
 
 current_word = None
 player_score = 0
+
+def siritori(text , flag):
+    if(not flag):
+        return 'しりとりを始めるよ！ 終わりたかったら!owari と打ってね  まずは自分から\n しりとりますたー', True
+
+    elif(text == '!owari'):
+        return "しりとりを終了するよ！ またね！\n あなたのスコアは" + str(player_score) + "です", False
+    elif True:
+        return "hoge", True
