@@ -1,9 +1,5 @@
 # discord.pyをインポート
 import discord
-# import siritori
-# import master_bot.include.joke as joke
-# import eagle
-# import japantime
 from include import gobi, japantime, eagle , joke , siritori
 
 # .envファイルからTOKENの値を読み込み
