@@ -41,3 +41,7 @@ word_list = ["apple", "elephant", "tiger", "rabbit", "cat", "dog"]
 
 current_word = None
 player_score = 0
+
+def hoe(first , last):
+    print(text + "is last word")
+    return text + "するますたー"
