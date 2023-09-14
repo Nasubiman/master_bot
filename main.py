@@ -1,6 +1,6 @@
 # discord.pyをインポート
 import discord
-from include import gobi, japantime, eagle , joke , siritori
+from include import gobi, japantime, eagle , joke , siritori ,help
 
 # .envファイルからTOKENの値を読み込み
 import os
@@ -31,7 +31,6 @@ async def on_message(message):
     global siritori_flag
     global siritori
     obj = siritori.ClassName("hoge", "piyo")
-    # Botが出力したメッセージじゃ無い場合（この条件でBotのメッセージを弾く）
     if not message.author.bot:
         print(obj.instance_method())
         if flag == False:
@@ -51,7 +50,7 @@ async def on_message(message):
                 flag = False
 
             elif contains_target(message.content, '!help'):
-                await message.channel.send('helpなんて存在しない、そんなものマスターにきけばいいと思うよ!')
+                await message.channel.send(help.help())
             
             elif siritori_flag == True:
                 if contains_target(message.content, '!end'):
@@ -73,7 +72,7 @@ async def on_message(message):
             elif (contains_target(message.content, '!bangladeshtime')):
                 await message.channel.send(japantime.bangladeshtime())
             
-            elif flag == True:
+            elif True:
                 await message.channel.send(gobi.gobi(message.content))
 
     # 上記と同様に2個目の設定
