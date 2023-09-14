@@ -1,4 +1,4 @@
-import siritori_library.siritori as siritori
+from include import siritori_library
 
 
 

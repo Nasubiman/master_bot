@@ -30,9 +30,7 @@ async def on_message(message):
     global flag
     global siritori_flag
     global siritori
-    obj = siritori.ClassName("hoge", "piyo")
     if not message.author.bot:
-        print(obj.instance_method())
         if flag == False:
             if contains_target(message.content, '!start'):
                 await message.channel.send('今から言葉の語尾にいちいち「ますたー」をつけてあげるよ！\n「!end」で終了するよ!')
