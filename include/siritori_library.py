@@ -23,27 +23,36 @@ class SiritoriLibrary:
             print(text + "is last word")
             self.add_used_word(text)
             last_word : str = text[-1]
-
-            return text + "ますたー"
+            result = self.find_word(last_word)
+            if not result == None:
+                self.add_used_word(self.word_list[result] + "ますたー")
+                return self.word_list[result] + "ますたー" , True
+            else:
+                return "その言葉は負けますたー", False
         elif True:
-            return "その言葉はだめです"
+            return "その言葉はだめです" , True
     
-    def __find_word__(self, word:str):
-        if word in self.word_list:
-            return True
+    def find_word(self, first_word:str):
+        indices = [index for index, word in enumerate(self.word_list) if word.startswith(first_word)]
+        if indices:
+            print(f"'{first_word}'で始まる要素のインデックス: {indices}")
+            return indices[0]
         else:
-            return False
+            print(f"'{first_word}'で始まる要素は見つかりませんでした")
+            return None
         
     def __init__(self):
         self.used_word_list = []
         self.word_list = [
-            "アイヌ",
-            "異次元",
-            "餓えた",
-            "英断",
-            "おもしろい",
-            "かわいい",
-            "きょどり"
+            "アイヌ", "あいしてる",
+            "異次元", "いろいろ",
+            "餓えた", "うるさい",
+            "英断", "えんぴつ",
+            "おもしろい", "おかしい",
+            "かわいい", "かわいそう",
+            "きょどり" , "きょうりゅう",
+            "くだらない", "くり食べる",
+            "けちょんけちょん", "けんかする",
             ]
             
         

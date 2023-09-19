@@ -15,4 +15,5 @@ def siritori(text , flag):
         return siritori_lib.show_used_word(), True
     
     elif True:
-        return siritori_lib.return_word(text) , True
+        result = siritori_lib.return_word(text)
+        return result[0] , result[1]
