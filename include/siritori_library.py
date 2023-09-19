@@ -26,9 +26,11 @@ class SiritoriLibrary:
             result = self.find_word(last_word)
             if not result == None:
                 self.add_used_word(self.word_list[result] + "ますたー")
-                return self.word_list[result] + "ますたー" , True
+                hoge = self.word_list[result]
+                self.word_list.pop(result)
+                return hoge + "ますたー" , True
             else:
-                return "その言葉は負けますたー", False
+                return "負けますたー", False
         elif True:
             return "その言葉はだめです" , True
     
@@ -53,6 +55,7 @@ class SiritoriLibrary:
             "きょどり" , "きょうりゅう",
             "くだらない", "くり食べる",
             "けちょんけちょん", "けんかする",
+            "こうもり", "こうもく",
             ]
             
         
