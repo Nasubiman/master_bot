@@ -18,8 +18,6 @@ siritori_flag = False
 async def on_ready():
     print('Startup Success!!!')
 
-
-
 def contains_target(text , target):
     return target in text
 
