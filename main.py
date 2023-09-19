@@ -1,7 +1,6 @@
 # discord.pyをインポート
 import discord
 from include import gobi, japantime, eagle , joke , siritori ,help
-
 # .envファイルからTOKENの値を読み込み
 import os
 from dotenv import load_dotenv

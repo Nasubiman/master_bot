@@ -21,7 +21,7 @@ class SiritoriLibrary:
             return False
 
     def return_word(self, text:str):
-        if(self.check_first_word(text) and self.check_last_word(text) and not text in self.used_word_list):
+        if(self.check_first_word(text) and self.check_last_word(text) and not text in self.used_word_list) and self.word_exists(text):
             print(text + "is last word")
             self.add_used_word(text)
             last_word : str = text[-1]
@@ -45,7 +45,7 @@ class SiritoriLibrary:
             print(f"'{first_word}'で始まる要素は見つかりませんでした")
             return None
     
-    def word_exists(word):
+    def word_exists(self, word:str):
         url = f"https://sakura-paris.org/dict/%E5%BA%83%E8%BE%9E%E8%8B%91/prefix/{word}" 
 
         response = requests.get(url)
